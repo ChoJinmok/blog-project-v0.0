@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.js": "/static/js/main.c02299d7.js",
-    "index.html": "/index.html",
-    "main.c02299d7.js.map": "/static/js/main.c02299d7.js.map"
+    "main.js": "/blog-project-v0.0/static/js/main.c02299d7.js",
+    "index.html": "/blog-project-v0.0/index.html",
+    "main.c02299d7.js.map": "/blog-project-v0.0/static/js/main.c02299d7.js.map"
   },
   "entrypoints": [
     "static/js/main.c02299d7.js"
