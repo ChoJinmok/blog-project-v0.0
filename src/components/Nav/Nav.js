@@ -20,13 +20,13 @@ export default function Nav() {
           </HeaderMenu>
         </HeaderUtil>
       </HeaderInner>
-      <HeaderBg />
     </Header>
   );
 }
 
 const Header = styled.header`
-  position: relative;
+  height: 128px;
+  background-color: #f8f8f8;
 `;
 
 const HeaderInner = styled.div`
@@ -86,14 +86,4 @@ const HeaderMenu = styled.button`
     height: 100%;
     object-fit: cover;
   }
-`;
-
-const HeaderBg = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 120px;
-  background-color: #f8f8f8;
-  z-index: -1;
 `;
