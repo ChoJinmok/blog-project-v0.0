@@ -1,3 +1,10 @@
+import Nav from '../../components/Nav/Nav';
+
 export default function Contents() {
-  return <h1>된다!</h1>;
+  return (
+    <>
+      <Nav />
+      <h1>된다!</h1>
+    </>
+  );
 }
