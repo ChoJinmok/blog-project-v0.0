@@ -3,8 +3,10 @@ import { Search } from '@styled-icons/bootstrap/Search';
 
 export default function Nav() {
   const blogTitle = '적(는)자생존, 기록은 기억을 이긴다.';
+  const profileImgUrl = '/blog-project-v0.0/images/IMG_0735.JPG';
+
   return (
-    <header>
+    <Header>
       <HeaderInner>
         <BlogTitle>{blogTitle}</BlogTitle>
         <HeaderUtil>
@@ -13,12 +15,19 @@ export default function Nav() {
               <SearchIcon />
             </SearchBtn>
           </SearchUtil>
-          <HeaderMenu></HeaderMenu>
+          <HeaderMenu>
+            <img alt="pofileImg" src={profileImgUrl} />
+          </HeaderMenu>
         </HeaderUtil>
       </HeaderInner>
-    </header>
+      <HeaderBg />
+    </Header>
   );
 }
+
+const Header = styled.header`
+  position: relative;
+`;
 
 const HeaderInner = styled.div`
   display: flex;
@@ -64,11 +73,27 @@ const SearchIcon = styled(Search)`
 `;
 
 const HeaderMenu = styled.button`
+  all: unset;
   margin-left: 14px;
-  border: none;
   border-radius: 50%;
-  background-color: black;
   width: 32px;
   height: 32px;
   cursor: pointer;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+`;
+
+const HeaderBg = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  background-color: #f8f8f8;
+  z-index: -1;
 `;
