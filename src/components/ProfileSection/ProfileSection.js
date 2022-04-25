@@ -1,23 +1,34 @@
 import styled from 'styled-components';
 
 export default function ProfileSection() {
-  const profileImgUrl = '/blog-project-v0.0/images/IMG_0735.JPG';
+  const profileData = {
+    profileImgUrl: '/blog-project-v0.0/images/IMG_0735.JPG',
+    userName: '나목',
+    userDesc: '프론트엔드 개발자',
+    followsCount: 0,
+    follingsCount: 0,
+  };
 
   return (
     <Profile>
       <ProfileImg>
-        <img alt="profileImg" src={profileImgUrl} />
+        <img alt="profileImg" src={profileData.profileImgUrl} />
       </ProfileImg>
-      <ProfileInfo>
-        <UserName>{}</UserName>
-        <Userdesc>{}</Userdesc>
-        <ProfileInfoFooter>
-          <BlogCount>
-            <Followers></Followers>
-            <Follings></Follings>
-          </BlogCount>
-        </ProfileInfoFooter>
-      </ProfileInfo>
+      <UserName>{profileData.userName}</UserName>
+      <UserDesc>{profileData.userDesc}</UserDesc>
+      <ProfileInfoFooter>
+        <BlogCount>
+          <Followers>
+            <FollowersTiltle>구독자</FollowersTiltle>
+            <FollowersCount>{profileData.followsCount}</FollowersCount>
+          </Followers>
+          <Followings>
+            <FollowingsTiltle>관심작가</FollowingsTiltle>
+            <FollowingsCount>{profileData.follingsCount}</FollowingsCount>
+          </Followings>
+        </BlogCount>
+        <SubscribeBtn>구독하기</SubscribeBtn>
+      </ProfileInfoFooter>
     </Profile>
   );
 }
@@ -45,8 +56,6 @@ const ProfileImg = styled.div`
   }
 `;
 
-const ProfileInfo = styled.div``;
-
 const UserName = styled.h1`
   font-weight: 400;
   font-size: 28px;
@@ -54,7 +63,7 @@ const UserName = styled.h1`
   color: #333;
 `;
 
-const Userdesc = styled.span`
+const UserDesc = styled.span`
   padding-top: 5px;
   font-size: 13px;
   line-height: 20px;
@@ -62,11 +71,55 @@ const Userdesc = styled.span`
 `;
 
 const ProfileInfoFooter = styled.div`
+  display: flex;
+  justify-content: space-between;
   padding: 22px 0 0;
 `;
 
-const BlogCount = styled.div``;
+const BlogCount = styled.div`
+  display: flex;
+`;
 
-const Followers = styled.div``;
+const Followers = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-right: 40px;
+  color: #959595;
+  line-height: 1.5;
+`;
 
-const Follings = styled.div``;
+const FollowersTiltle = styled.span`
+  font-size: 12px;
+  cursor: pointer;
+`;
+
+const FollowersCount = styled.span`
+  font-weight: 300;
+  font-size: 20px;
+  cursor: pointer;
+
+  &: hover {
+    text-decoration: underline;
+  }
+`;
+
+const Followings = styled(Followers)`
+  margin: 0;
+`;
+
+const FollowingsTiltle = styled(FollowersTiltle)``;
+
+const FollowingsCount = styled(FollowersCount)``;
+
+const SubscribeBtn = styled.button`
+  all: unset;
+  width: 80px;
+  height: 32px;
+  border: 1px solid #00c3bd;
+  border-radius: 20px;
+  font-size: 13px;
+  line-height: 32px;
+  color: #00c3bd;
+  text-align: center;
+  cursor: pointer;
+`;

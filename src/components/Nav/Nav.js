@@ -2,13 +2,15 @@ import styled from 'styled-components';
 import { Search } from '@styled-icons/bootstrap/Search';
 
 export default function Nav() {
-  const blogTitle = '적(는)자생존, 기록은 기억을 이긴다.';
-  const profileImgUrl = '/blog-project-v0.0/images/IMG_0735.JPG';
+  const navData = {
+    blogTitle: '적(는)자생존, 기록은 기억을 이긴다.',
+    profileImgUrl: '/blog-project-v0.0/images/IMG_0735.JPG',
+  };
 
   return (
     <Header>
       <HeaderInner>
-        <BlogTitle>{blogTitle}</BlogTitle>
+        <BlogTitle>{navData.blogTitle}</BlogTitle>
         <HeaderUtil>
           <SearchUtil>
             <SearchBtn>
@@ -16,7 +18,7 @@ export default function Nav() {
             </SearchBtn>
           </SearchUtil>
           <HeaderMenu>
-            <img alt="pofileImg" src={profileImgUrl} />
+            <img alt="pofileImg" src={navData.profileImgUrl} />
           </HeaderMenu>
         </HeaderUtil>
       </HeaderInner>
