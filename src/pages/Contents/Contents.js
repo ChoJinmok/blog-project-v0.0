@@ -1,12 +1,13 @@
 import Nav from '../../components/Nav/Nav';
 import ProfileSection from '../../components/ProfileSection/ProfileSection';
+import TabContents from '../../components/TabContents/TabContents';
 
 export default function Contents() {
   return (
     <>
       <Nav />
       <ProfileSection />
-      <h1>된다!</h1>
+      <TabContents />
     </>
   );
 }
