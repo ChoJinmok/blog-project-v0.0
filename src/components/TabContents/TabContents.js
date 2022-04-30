@@ -25,8 +25,6 @@ export default function TabContents() {
 
 const Tabs = styled.nav`
   display: flex;
-  margin: 0 auto;
-  width: 700px;
   box-shadow: inset 0 -1px 0 rgb(230 230 230);
 `;
 
