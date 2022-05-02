@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+// import ProfileInfoFooter from './components/ProfileInfoFooter';
+
 export default function ProfileSection() {
   const profileData = {
     profileImgUrl: '/blog-project-v0.0/images/IMG_0735.JPG',
@@ -16,19 +18,10 @@ export default function ProfileSection() {
       </ProfileImg>
       <UserName>{profileData.userName}</UserName>
       <UserDesc>{profileData.userDesc}</UserDesc>
-      <ProfileInfoFooter>
-        <BlogCount>
-          <Followers>
-            <FollowersTiltle>구독자</FollowersTiltle>
-            <FollowersCount>{profileData.followsCount}</FollowersCount>
-          </Followers>
-          <Followings>
-            <FollowingsTiltle>관심작가</FollowingsTiltle>
-            <FollowingsCount>{profileData.follingsCount}</FollowingsCount>
-          </Followings>
-        </BlogCount>
-        <SubscribeBtn>구독하기</SubscribeBtn>
-      </ProfileInfoFooter>
+      {/* <ProfileInfoFooter
+        followsCount={profileData.followsCount}
+        follingsCount={profileData.follingsCount}
+      /> */}
     </Profile>
   );
 }
@@ -68,58 +61,4 @@ const UserDesc = styled.span`
   font-size: 13px;
   line-height: 20px;
   color: #959595;
-`;
-
-const ProfileInfoFooter = styled.div`
-  display: flex;
-  justify-content: space-between;
-  padding: 22px 0 0;
-`;
-
-const BlogCount = styled.div`
-  display: flex;
-`;
-
-const Followers = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-right: 40px;
-  color: #959595;
-  line-height: 1.5;
-`;
-
-const FollowersTiltle = styled.span`
-  font-size: 12px;
-  cursor: pointer;
-`;
-
-const FollowersCount = styled.span`
-  font-weight: 300;
-  font-size: 20px;
-  cursor: pointer;
-
-  &: hover {
-    text-decoration: underline;
-  }
-`;
-
-const Followings = styled(Followers)`
-  margin: 0;
-`;
-
-const FollowingsTiltle = styled(FollowersTiltle)``;
-
-const FollowingsCount = styled(FollowersCount)``;
-
-const SubscribeBtn = styled.button`
-  all: unset;
-  width: 80px;
-  height: 32px;
-  border: 1px solid #00c3bd;
-  border-radius: 20px;
-  font-size: 13px;
-  line-height: 32px;
-  color: #00c3bd;
-  text-align: center;
-  cursor: pointer;
 `;
