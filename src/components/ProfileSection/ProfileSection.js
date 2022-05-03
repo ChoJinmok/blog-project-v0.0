@@ -28,8 +28,7 @@ export default function ProfileSection() {
 
 const Profile = styled.div`
   position: relative;
-  width: 700px;
-  margin: 0 auto 94px;
+  margin: 0 0 94px;
   padding: 35px 0 0;
 `;
 
