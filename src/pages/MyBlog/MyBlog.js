@@ -1,17 +1,27 @@
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
+
 import Nav from '../../components/Nav/Nav';
 import ProfileSection from '../../components/ProfileSection/ProfileSection';
 import TabContents from '../../components/TabContents/TabContents';
 import ArticleContent from '../../components/ArticleContent/ArticleContent';
 
 export default function MyBlog() {
+  const navigate = useNavigate();
+
+  const clickArticle = id => {
+    navigate(`/blog-project-v0.0/article/${id}`);
+  };
+
   return (
     <>
       <Nav />
       <MyBlogWrap>
         <ProfileSection />
         <TabContents />
-        <ArticleContent />
+        <ul>
+          <ArticleContent clickArticle={clickArticle} />
+        </ul>
       </MyBlogWrap>
     </>
   );

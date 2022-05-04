@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
-export default function ArticleContent() {
+export default function ArticleContent({ clickArticle }) {
   const articleData = {
+    id: 1,
     category: 'journal',
     title: '블로그 프로젝트 첫 글',
     subTitile: '첫 글',
@@ -10,7 +11,7 @@ export default function ArticleContent() {
   };
 
   return (
-    <ArticleWrap>
+    <ArticleWrap onClick={clickArticle(articleData.id)}>
       <ArticleCategory>{articleData.category}</ArticleCategory>
       <ArticleTitle>{articleData.title}</ArticleTitle>
       <ContentWrap>
