@@ -8,35 +8,31 @@ export default function Nav() {
   };
 
   return (
-    <Header>
-      <HeaderInner>
-        <BlogTitle>{navData.blogTitle}</BlogTitle>
-        <HeaderUtil>
-          <SearchUtil>
-            <SearchBtn>
-              <SearchIcon />
-            </SearchBtn>
-          </SearchUtil>
-          <HeaderMenu>
-            <img alt="pofileImg" src={navData.profileImgUrl} />
-          </HeaderMenu>
-        </HeaderUtil>
-      </HeaderInner>
-    </Header>
+    <HeaderInner>
+      <BlogTitle>{navData.blogTitle}</BlogTitle>
+      <HeaderUtil>
+        <SearchUtil>
+          <SearchBtn>
+            <SearchIcon />
+          </SearchBtn>
+        </SearchUtil>
+        <HeaderMenu>
+          <img alt="pofileImg" src={navData.profileImgUrl} />
+        </HeaderMenu>
+      </HeaderUtil>
+    </HeaderInner>
   );
 }
 
-const Header = styled.header`
-  height: 128px;
-  background-color: #f8f8f8;
-`;
-
 const HeaderInner = styled.div`
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 auto;
-  max-width: 1080px;
+  width: 1080px;
 `;
 
 const BlogTitle = styled.h1`
