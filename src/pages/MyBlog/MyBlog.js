@@ -9,7 +9,7 @@ import ArticleContent from '../../components/ArticleContent/ArticleContent';
 export default function MyBlog() {
   const navigate = useNavigate();
 
-  const clickArticle = id => {
+  const goToArticlePage = id => {
     navigate(`/blog-project-v0.0/article/${id}`);
   };
 
@@ -20,7 +20,7 @@ export default function MyBlog() {
         <ProfileSection />
         <TabContents />
         <ul>
-          <ArticleContent clickArticle={clickArticle} />
+          <ArticleContent goToArticlePage={goToArticlePage} />
         </ul>
       </MyBlogWrap>
     </>

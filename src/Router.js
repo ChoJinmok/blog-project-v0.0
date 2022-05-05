@@ -7,7 +7,10 @@ function Router() {
     <BrowserRouter>
       <Routes>
         <Route path="/blog-project-v0.0" element={<MyBlog />} />
-        <Route path="/blog-project-v0.0/article" element={<ArticlePage />} />
+        <Route
+          path="/blog-project-v0.0/article/:id"
+          element={<ArticlePage />}
+        />
       </Routes>
     </BrowserRouter>
   );

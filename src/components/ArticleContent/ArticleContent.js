@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export default function ArticleContent({ clickArticle }) {
+export default function ArticleContent({ goToArticlePage }) {
   const articleData = {
     id: 1,
     category: 'journal',
@@ -11,7 +11,7 @@ export default function ArticleContent({ clickArticle }) {
   };
 
   return (
-    <ArticleWrap onClick={clickArticle(articleData.id)}>
+    <ArticleWrap onClick={() => goToArticlePage(articleData.id)}>
       <ArticleCategory>{articleData.category}</ArticleCategory>
       <ArticleTitle>{articleData.title}</ArticleTitle>
       <ContentWrap>
