@@ -6,16 +6,26 @@ import ArticleContent from '../../components/ArticleContent/ArticleContent';
 
 export default function MyBlog() {
   return (
-    <>
+    <MyBlogSection>
       <Nav />
+      <HeaderBg />
       <MyBlogWrap>
         <ProfileSection />
         <TabContents />
         <ArticleContent />
       </MyBlogWrap>
-    </>
+    </MyBlogSection>
   );
 }
+
+const MyBlogSection = styled.div`
+  position: relative;
+`;
+
+const HeaderBg = styled.div`
+  height: 128px;
+  background-color: #f8f8f8;
+`;
 
 const MyBlogWrap = styled.div`
   margin: 0 auto;
