@@ -9,7 +9,9 @@ export default function ArticlePage() {
         <ArticleInfo>
           <CoverTitle>블로그 프로젝트 첫 글</CoverTitle>
           <CoverSubTitle>첫 글</CoverSubTitle>
-          <WriteInfo>by 나목 ﹒ May 6 2022</WriteInfo>
+          <WriteInfo>
+            <Italic>by</Italic> 나목 ﹒ <Italic>May 6 2022</Italic>
+          </WriteInfo>
         </ArticleInfo>
       </BlogCover>
     </ArticlePageWrap>
@@ -48,18 +50,24 @@ const DefaultText = styled.div`
 `;
 
 const CoverTitle = styled(DefaultText)`
-  font-weight: 700;
-  line-height: 1.2;
-  font-size: 40px;
+  line-height: 40pt;
+  font-size: 34pt;
+  letter-spacing: -0.01em;
 `;
 
 const CoverSubTitle = styled(DefaultText)`
-  font-size: 16px;
-  line-height: 1.5;
+  margin-top: 3px;
+  font-size: 12pt;
+  line-height: 18pt;
+  letter-spacing: -0.03em;
 `;
 
 const WriteInfo = styled(DefaultText)`
   margin-top: 45px;
-  font-size: 16px;
+  font-size: 12px;
   line-height: 1.5;
+`;
+
+const Italic = styled.span`
+  font-style: italic;
 `;
