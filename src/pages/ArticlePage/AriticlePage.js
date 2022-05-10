@@ -34,6 +34,7 @@ const BlogCover = styled.div`
 `;
 
 const ArticleInfo = styled.div`
+  padding: 0 96px;
   max-width: 100%;
   min-width: 0px;
   width: 900px;
