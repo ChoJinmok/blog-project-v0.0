@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Nav from '../../components/Nav/Nav';
+import UserHeader from './components/UserHeader';
 
 export default function ArticlePage() {
   return (
@@ -7,11 +8,9 @@ export default function ArticlePage() {
       <Nav />
       <BlogCover>
         <ArticleInfo>
+          <UserHeader />
           <CoverTitle>블로그 프로젝트 첫 글</CoverTitle>
           <CoverSubTitle>첫 글</CoverSubTitle>
-          <WriteInfo>
-            <Italic>by</Italic> 나목 ﹒ <Italic>May 6 2022</Italic>
-          </WriteInfo>
         </ArticleInfo>
       </BlogCover>
     </ArticlePageWrap>
@@ -35,6 +34,7 @@ const BlogCover = styled.div`
 `;
 
 const ArticleInfo = styled.div`
+  padding: 0 96px;
   max-width: 100%;
   min-width: 0px;
   width: 900px;
@@ -50,24 +50,15 @@ const DefaultText = styled.div`
 `;
 
 const CoverTitle = styled(DefaultText)`
-  line-height: 40pt;
-  font-size: 34pt;
-  letter-spacing: -0.01em;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.2;
 `;
 
 const CoverSubTitle = styled(DefaultText)`
-  margin-top: 3px;
-  font-size: 12pt;
-  line-height: 18pt;
+  margin-top: 5px;
+  color: rgba(117, 117, 117, 1);
+  font-size: 27px;
+  line-height: 28px;
   letter-spacing: -0.03em;
-`;
-
-const WriteInfo = styled(DefaultText)`
-  margin-top: 45px;
-  font-size: 12px;
-  line-height: 1.5;
-`;
-
-const Italic = styled.span`
-  font-style: italic;
 `;
