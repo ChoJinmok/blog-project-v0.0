@@ -9,7 +9,7 @@ export default function Nav() {
     setActiveSearchBar(true);
   };
 
-  const mouseOutHeader = () => {
+  const mouseLeaveHeader = () => {
     setActiveSearchBar(false);
   };
 
@@ -19,7 +19,7 @@ export default function Nav() {
   };
 
   return (
-    <HeaderInner onMouseOut={mouseOutHeader}>
+    <HeaderInner onMouseLeave={mouseLeaveHeader}>
       <BlogTitle>{navData.blogTitle}</BlogTitle>
       <HeaderUtil>
         <SearchUtil active={activeSearchBar} onClick={clickSearch}>
