@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -7,6 +8,8 @@ import TabContents from '../../components/TabContents/TabContents';
 import ArticleContent from '../../components/ArticleContent/ArticleContent';
 
 export default function MyBlog() {
+  const [activeSection setActiveSection] = useState('introduce');
+
   const navigate = useNavigate();
 
   const goToArticlePage = id => {
