@@ -8,12 +8,16 @@ import TabContents from '../../components/TabContents/TabContents';
 import ArticleContent from '../../components/ArticleContent/ArticleContent';
 
 export default function MyBlog() {
-  const [activeSection setActiveSection] = useState('introduce');
+  const [activeTab, setActiveTab] = useState('글');
 
   const navigate = useNavigate();
 
   const goToArticlePage = id => {
     navigate(`/blog-project-v0.0/article/${id}`);
+  };
+
+  const clickTab = event => {
+    setActiveTab(event.target.innerText);
   };
 
   return (
@@ -22,10 +26,12 @@ export default function MyBlog() {
       <HeaderBg />
       <MyBlogWrap>
         <ProfileSection />
-        <TabContents />
-        <ul>
-          <ArticleContent goToArticlePage={goToArticlePage} />
-        </ul>
+        <TabContents activeTab={activeTab} clickTab={clickTab} />
+        {activeTab === '글' && (
+          <ul>
+            <ArticleContent goToArticlePage={goToArticlePage} />
+          </ul>
+        )}
       </MyBlogWrap>
     </MyBlogSection>
   );

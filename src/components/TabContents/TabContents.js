@@ -1,14 +1,8 @@
-import { useState } from 'react';
 import styled from 'styled-components';
 
-export default function TabContents() {
-  const [activeTab, setActiveTab] = useState('글');
-
-  const clickTab = event => {
-    setActiveTab(event.target.innerText);
-  };
-
-  const Contents = ['소개', '글', '시리즈'];
+export default function TabContents({ activeTab, clickTab }) {
+  // const Contents = ['소개', '글', '시리즈'];
+  const Contents = ['소개', '글'];
 
   return (
     <Tabs>
