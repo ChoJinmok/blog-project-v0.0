@@ -6,9 +6,10 @@ import Nav from '../../components/Nav/Nav';
 import ProfileSection from '../../components/ProfileSection/ProfileSection';
 import TabContents from '../../components/TabContents/TabContents';
 import ArticleContent from '../../components/ArticleContent/ArticleContent';
+import UserIntroduce from './components/UserIntoroduce';
 
 export default function MyBlog() {
-  const [activeTab, setActiveTab] = useState('글');
+  const [activeTab, setActiveTab] = useState('소개');
 
   const navigate = useNavigate();
 
@@ -25,13 +26,18 @@ export default function MyBlog() {
       <Nav />
       <HeaderBg />
       <MyBlogWrap>
-        <ProfileSection />
-        <TabContents activeTab={activeTab} clickTab={clickTab} />
-        {activeTab === '글' && (
-          <ul>
-            <ArticleContent goToArticlePage={goToArticlePage} />
-          </ul>
-        )}
+        <header>
+          <ProfileSection />
+          <TabContents activeTab={activeTab} clickTab={clickTab} />
+        </header>
+        <main>
+          {activeTab === '글' && (
+            <ul>
+              <ArticleContent goToArticlePage={goToArticlePage} />
+            </ul>
+          )}
+          {activeTab === '소개' && <UserIntroduce />}
+        </main>
       </MyBlogWrap>
     </MyBlogSection>
   );
