@@ -4,8 +4,11 @@ export default function UserIntroduce() {
   return (
     <UserIntroduceWrap>
       <IntroduceDefault>
-        사회를 발전시킬 수 있는 아이디어를 가진 사람들과 함께 꿈을 실현시키고
-        싶은 프론트엔드 개발자 조진목입니다.
+        사회를 발전시킬 수 있는 아이디어를 가진{' '}
+        <IntroduceBold>
+          사람들과 함께 꿈을 실현시키고 싶은 프론트엔드 개발자 조진목
+        </IntroduceBold>
+        입니다.
       </IntroduceDefault>
       <IntroduceH3>Contact.</IntroduceH3>
       <IntroduceDefault>
