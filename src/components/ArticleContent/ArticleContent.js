@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { LinkCopyIconButton } from '../../components/IconButton/IconButton';
+
 export default function ArticleContent({ goToArticlePage }) {
   const articleData = {
     id: 1,
@@ -12,13 +14,18 @@ export default function ArticleContent({ goToArticlePage }) {
 
   return (
     <ArticleWrap onClick={() => goToArticlePage(articleData.id)}>
-      <ArticleCategory>{articleData.category}</ArticleCategory>
+      <PublishTime>May 18, 2022</PublishTime>
       <ArticleTitle>{articleData.title}</ArticleTitle>
       <ContentWrap>
         <SubTitle>{articleData.subTitile}</SubTitle>
         <Content>{articleData.content}</Content>
       </ContentWrap>
-      <PublishTime>May 4, 2022</PublishTime>
+      <ArticleContentBottom>
+        <ArticleCategoryWrap>
+          <ArticleCategory>{articleData.category}</ArticleCategory>
+        </ArticleCategoryWrap>
+        <LinkCopyIconButton />
+      </ArticleContentBottom>
     </ArticleWrap>
   );
 }
@@ -31,13 +38,10 @@ const ArticleWrap = styled.li`
   cursor: pointer;
 `;
 
-const ArticleCategory = styled.h1`
-  display: inline-block;
-  margin: 3px 0 11px;
-  border-bottom: 1px solid #00c3bd;
-  color: #00c3bd;
-  font-size: 13px;
-  line-height: 14px;
+const PublishTime = styled.span`
+  color: #959595;
+  font-size: 12px;
+  line-height: 1.5;
 `;
 
 const ArticleTitle = styled.h1`
@@ -75,8 +79,28 @@ const Content = styled.p`
   word-wrap: break-word;
 `;
 
-const PublishTime = styled.span`
-  color: #959595;
-  font-size: 12px;
-  line-height: 1.5;
+const ArticleContentBottom = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const ArticleCategoryWrap = styled.div``;
+
+const ArticleCategory = styled.div`
+  margin-right: 8px;
+  padding: 2px 8px;
+  border-radius: 100px;
+  color: #333;
+  background-color: rgba(242, 242, 242, 1);
+  font-size: 13px;
+  line-height: 20px;
+  cursor: pointer;
+  text-align: center;
+  white-space: nowrap;
+  word-break: break-word;
+
+  &:hover {
+    background-color: rgba(230, 230, 230, 1);
+  }
 `;
