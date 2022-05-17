@@ -1,7 +1,9 @@
 import styled from 'styled-components';
-import { Github } from '@styled-icons/boxicons-logos/Github';
-import { Instagram } from '@styled-icons/boxicons-logos/Instagram';
-import { Link } from '@styled-icons/entypo/Link';
+import {
+  GithubIconButton,
+  InstagramIconButton,
+  LinkCopyIconButton,
+} from '../../../components/IconButton/IconButton';
 
 export default function UserHeader() {
   return (
@@ -12,19 +14,13 @@ export default function UserHeader() {
         </UserPicture>
         <ArticleInfo>
           <UserNickName>나목</UserNickName>
-          <CreatingTime>May 6, 2022</CreatingTime>
+          <CreatingTime>May 18, 2022</CreatingTime>
         </ArticleInfo>
       </HeaderLeft>
       <HeaderRight>
-        <IconButton>
-          <GithubIcon />
-        </IconButton>
-        <IconButton>
-          <InstagramIcon />
-        </IconButton>
-        <IconButton>
-          <LinkCopyIcon />
-        </IconButton>
+        <GithubIconButton />
+        <InstagramIconButton />
+        <LinkCopyIconButton />
       </HeaderRight>
     </ContentHeader>
   );
@@ -76,37 +72,3 @@ const CreatingTime = styled.span`
 `;
 
 const HeaderRight = styled.div``;
-
-const IconButton = styled.button`
-  padding: unset;
-  border: unset;
-  width: 32px;
-  height: 41px;
-  background-color: unset;
-  cursor: pointer;
-
-  /* &:not(:last-child) {
-    padding-right: 4px;
-  } */
-
-  &:hover {
-    svg {
-      fill: rgba(117, 117, 117, 1);
-    }
-  }
-`;
-
-const GithubIcon = styled(Github)`
-  width: 20px;
-  fill: rgba(168, 168, 168, 1);
-`;
-
-const InstagramIcon = styled(Instagram)`
-  width: 22px;
-  fill: rgba(168, 168, 168, 1);
-`;
-
-const LinkCopyIcon = styled(Link)`
-  width: 19px;
-  fill: rgba(168, 168, 168, 1);
-`;

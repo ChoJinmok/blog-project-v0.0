@@ -16,7 +16,10 @@ export default function UserIntroduce() {
       </IntroduceDefault>
       <IntroduceH3>Channel.</IntroduceH3>
       <IntroduceDefault>
-        GitHub. <IntroduceBold>https://github.com/ChoJinmok</IntroduceBold>
+        GitHub.{' '}
+        <IntroduceLink href="https://github.com/ChoJinmok" target="_blank">
+          <IntroduceBold>https://github.com/ChoJinmok</IntroduceBold>
+        </IntroduceLink>
       </IntroduceDefault>
       <IntroduceH3>Introduce.</IntroduceH3>
       <IntroduceDefault>
@@ -58,4 +61,10 @@ const IntroduceH3 = styled(IntroduceDefault)`
 
 const IntroduceBold = styled.span`
   font-weight: 400;
+`;
+
+const IntroduceLink = styled.a`
+  color: inherit;
+  word-wrap: break-word;
+  cursor: pointer;
 `;
