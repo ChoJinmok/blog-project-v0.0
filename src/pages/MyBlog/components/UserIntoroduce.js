@@ -17,7 +17,11 @@ export default function UserIntroduce() {
       <IntroduceH3>Channel.</IntroduceH3>
       <IntroduceDefault>
         GitHub.{' '}
-        <IntroduceLink href="https://github.com/ChoJinmok" target="_blank">
+        <IntroduceLink
+          href="https://github.com/ChoJinmok"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <IntroduceBold>https://github.com/ChoJinmok</IntroduceBold>
         </IntroduceLink>
       </IntroduceDefault>
