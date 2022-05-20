@@ -13,6 +13,9 @@ export default function ArticlePage() {
           <CoverSubTitle>첫 글</CoverSubTitle>
         </ArticleInfo>
       </BlogCover>
+      <ArticleMain>
+        <DefaultText>rr</DefaultText>
+      </ArticleMain>
     </ArticlePageWrap>
   );
 }
@@ -61,4 +64,11 @@ const CoverSubTitle = styled(DefaultText)`
   font-size: 27px;
   line-height: 28px;
   letter-spacing: -0.03em;
+`;
+
+const ArticleMain = styled(ArticleInfo)`
+  margin: 30px auto 0;
+  color: #333;
+  font-size: 14px;
+  line-height: 1.5;
 `;
