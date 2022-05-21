@@ -14,7 +14,7 @@ export default function UserHeader() {
         </UserPicture>
         <ArticleInfo>
           <UserNickName>나목</UserNickName>
-          <CreatingTime>May 18, 2022</CreatingTime>
+          <CreatingTime>May 21, 2022</CreatingTime>
         </ArticleInfo>
       </HeaderLeft>
       <HeaderRight>
