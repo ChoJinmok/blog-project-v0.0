@@ -7,14 +7,14 @@ export default function ArticleContent({ goToArticlePage }) {
     id: 1,
     category: 'journal',
     title: '블로그 프로젝트 첫 글',
-    subTitile: '첫 글',
+    subTitile: '포기하지 않고 꾸준히 해내는 비결, 작심삼일 활용법',
     content:
-      '작년 봄에 진행했었던 "도메인 주도 설계" 스터디를 올해도 진행합니다. 함께 하실 분을 모집합니다.   도메인 주도 설계 전술적 패턴 "도메인 주도 설계"는 크게 "전략적 설계 패턴"과 "전술적 설계 패턴" 으로 구분됩니다. 저희 스터디는 전술적 설계 패턴의 일부분만 공부하며, "전략적 패턴"에 대해서는 다루지 않습니다. 일반적으로 "전술적 패턴"의 일부',
+      '누구나 새해 다짐을 하지만, 이를 꾸준히 해내는 경우는 거의 없다. 굳은 결심의 대부분은 작심삼일로 끝난다. 그런데 작심삼일을 역으로 이용해서 꾸준히 해내는 사람들이 있다. 이들은 장기 목표를 두고 2~3달을 떠올리지 않는다. 대신 3일만 버티자고 생각한다. 일단 3일만 버티고, 그다음 3일만 버티고, 그렇게 한 달을 채우고, 100일에 이른다.',
   };
 
   return (
     <ArticleWrap onClick={() => goToArticlePage(articleData.id)}>
-      <PublishTime>May 18, 2022</PublishTime>
+      <PublishTime>May 21, 2022</PublishTime>
       <ArticleTitle>{articleData.title}</ArticleTitle>
       <ContentWrap>
         <SubTitle>{articleData.subTitile}</SubTitle>
