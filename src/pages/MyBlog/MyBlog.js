@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 import Nav from '../../components/Nav/Nav';
@@ -10,12 +9,13 @@ import UserIntroduce from './components/UserIntoroduce';
 
 export default function MyBlog() {
   const [activeTab, setActiveTab] = useState('소개');
+  const [articleData, setArticleData] = useState([]);
 
-  const navigate = useNavigate();
-
-  const goToArticlePage = id => {
-    navigate(`/blog-project-v0.0/article/${id}`);
-  };
+  useEffect(() => {
+    fetch('http://localhost:3000/blog-project-v0.0/data/articleData.json')
+      .then(result => result.json())
+      .then(res => setArticleData(res));
+  }, []);
 
   const clickTab = event => {
     setActiveTab(event.target.innerText);
@@ -33,7 +33,9 @@ export default function MyBlog() {
         <main>
           {activeTab === '글' && (
             <ul>
-              <ArticleContent goToArticlePage={goToArticlePage} />
+              {articleData.map(data => {
+                return <ArticleContent key={data.id} articleData={data} />;
+              })}
             </ul>
           )}
           {activeTab === '소개' && <UserIntroduce />}
