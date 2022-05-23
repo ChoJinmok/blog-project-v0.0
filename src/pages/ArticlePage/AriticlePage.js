@@ -1,18 +1,30 @@
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import Nav from '../../components/Nav/Nav';
 import UserHeader from './components/UserHeader';
 
 export default function ArticlePage() {
+  const [articleData, setArticleData] = useState({});
+
+  const params = useParams();
+
+  useEffect(() => {
+    fetch('http://localhost:3000/blog-project-v0.0/data/articleData.json')
+      .then(result => result.json())
+      .then(res =>
+        setArticleData(res.filter(el => el.id === parseInt(params.id))[0])
+      );
+  }, [params.id]);
+
   return (
     <ArticlePageWrap>
       <Nav />
       <BlogCover>
         <ArticleInfo>
-          <UserHeader />
-          <CoverTitle>블로그 프로젝트 첫 글</CoverTitle>
-          <CoverSubTitle>
-            포기하지 않고 꾸준히 해내는 비결, 작심삼일 활용법
-          </CoverSubTitle>
+          <UserHeader publishTime={articleData.publishTime} />
+          <CoverTitle>{articleData.title}</CoverTitle>
+          <CoverSubTitle>{articleData.subTitile}</CoverSubTitle>
         </ArticleInfo>
       </BlogCover>
       <ArticleMain>

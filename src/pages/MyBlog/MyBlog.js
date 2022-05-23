@@ -28,9 +28,9 @@ export default function MyBlog() {
       <MyBlogWrap>
         <header>
           <ProfileSection />
-          <TabContents activeTab={activeTab} clickTab={clickTab} />
         </header>
         <main>
+          <TabContents activeTab={activeTab} clickTab={clickTab} />
           {activeTab === '글' && (
             <ul>
               {articleData.map(data => {

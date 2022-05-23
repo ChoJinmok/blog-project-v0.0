@@ -12,7 +12,7 @@ export default function ArticleContent({ articleData }) {
 
   return (
     <ArticleWrap onClick={goToArticlePage}>
-      <PublishTime>{articleData.PublishTime}</PublishTime>
+      <PublishTime>{articleData.publishTime}</PublishTime>
       <ArticleTitle>{articleData.title}</ArticleTitle>
       <ContentWrap>
         <SubTitle>{articleData.subTitile}</SubTitle>
@@ -20,7 +20,9 @@ export default function ArticleContent({ articleData }) {
       </ContentWrap>
       <ArticleContentBottom>
         <ArticleCategoryWrap>
-          <ArticleCategory>{articleData.category}</ArticleCategory>
+          {articleData.tags.map((tag, index) => {
+            return <ArticleCategory key={index}>{tag}</ArticleCategory>;
+          })}
         </ArticleCategoryWrap>
         <LinkCopyIconButton />
       </ArticleContentBottom>
