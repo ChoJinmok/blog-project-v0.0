@@ -1,28 +1,31 @@
+import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 // import ProfileInfoFooter from './components/ProfileInfoFooter';
 
 export default function ProfileSection() {
-  const profileData = {
-    profileImgUrl: '/blog-project-v0.0/images/IMG_0735.JPG',
-    userName: '나목',
-    userDesc: '프론트엔드 개발자',
-    followsCount: 0,
-    follingsCount: 0,
-  };
+  const [profileData, setProfileData] = useState(null);
+
+  useEffect(() => {
+    fetch('http://localhost:3000/blog-project-v0.0/data/userData.json')
+      .then(result => result.json())
+      .then(res => setProfileData(res[0]));
+  }, []);
 
   return (
-    <Profile>
-      <ProfileImg>
-        <img alt="profileImg" src={profileData.profileImgUrl} />
-      </ProfileImg>
-      <UserName>{profileData.userName}</UserName>
-      <UserDesc>{profileData.userDesc}</UserDesc>
-      {/* <ProfileInfoFooter
+    profileData && (
+      <Profile>
+        <ProfileImg>
+          <img alt="profileImg" src={profileData.profileImgUrl} />
+        </ProfileImg>
+        <UserName>{profileData.userName}</UserName>
+        <UserDesc>{profileData.userDesc}</UserDesc>
+        {/* <ProfileInfoFooter
         followsCount={profileData.followsCount}
         follingsCount={profileData.follingsCount}
       /> */}
-    </Profile>
+      </Profile>
+    )
   );
 }
 

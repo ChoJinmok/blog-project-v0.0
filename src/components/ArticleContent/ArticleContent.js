@@ -1,20 +1,18 @@
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { LinkCopyIconButton } from '../../components/IconButton/IconButton';
 
-export default function ArticleContent({ goToArticlePage }) {
-  const articleData = {
-    id: 1,
-    category: 'journal',
-    title: '블로그 프로젝트 첫 글',
-    subTitile: '포기하지 않고 꾸준히 해내는 비결, 작심삼일 활용법',
-    content:
-      '누구나 새해 다짐을 하지만, 이를 꾸준히 해내는 경우는 거의 없다. 굳은 결심의 대부분은 작심삼일로 끝난다. 그런데 작심삼일을 역으로 이용해서 꾸준히 해내는 사람들이 있다. 이들은 장기 목표를 두고 2~3달을 떠올리지 않는다. 대신 3일만 버티자고 생각한다. 일단 3일만 버티고, 그다음 3일만 버티고, 그렇게 한 달을 채우고, 100일에 이른다.',
+export default function ArticleContent({ articleData }) {
+  const navigate = useNavigate();
+
+  const goToArticlePage = () => {
+    navigate(`/blog-project-v0.0/article/${articleData.id}`);
   };
 
   return (
-    <ArticleWrap onClick={() => goToArticlePage(articleData.id)}>
-      <PublishTime>May 21, 2022</PublishTime>
+    <ArticleWrap onClick={goToArticlePage}>
+      <PublishTime>{articleData.publishTime}</PublishTime>
       <ArticleTitle>{articleData.title}</ArticleTitle>
       <ContentWrap>
         <SubTitle>{articleData.subTitile}</SubTitle>
@@ -22,7 +20,9 @@ export default function ArticleContent({ goToArticlePage }) {
       </ContentWrap>
       <ArticleContentBottom>
         <ArticleCategoryWrap>
-          <ArticleCategory>{articleData.category}</ArticleCategory>
+          {articleData.tags.map((tag, index) => {
+            return <ArticleCategory key={index}>{tag}</ArticleCategory>;
+          })}
         </ArticleCategoryWrap>
         <LinkCopyIconButton />
       </ArticleContentBottom>

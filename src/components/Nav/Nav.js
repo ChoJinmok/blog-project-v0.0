@@ -1,9 +1,16 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Search } from '@styled-icons/bootstrap/Search';
 
 export default function Nav() {
   const [activeSearchBar, setActiveSearchBar] = useState(false);
+  const [navData, setNavData] = useState(null);
+
+  useEffect(() => {
+    fetch('http://localhost:3000/blog-project-v0.0/data/userData.json')
+      .then(result => result.json())
+      .then(res => setNavData(res[0]));
+  }, []);
 
   const clickSearch = () => {
     setActiveSearchBar(true);
@@ -13,30 +20,27 @@ export default function Nav() {
     setActiveSearchBar(false);
   };
 
-  const navData = {
-    blogTitle: '적(는)자생존, 기록은 기억을 이긴다.',
-    profileImgUrl: '/blog-project-v0.0/images/IMG_0735.JPG',
-  };
-
   return (
-    <HeaderInner onMouseLeave={mouseLeaveHeader}>
-      <BlogTitle>{navData.blogTitle}</BlogTitle>
-      <HeaderUtil>
-        <SearchUtil active={activeSearchBar} onClick={clickSearch}>
-          <SearchInput
-            type="text"
-            placeholder="검색내용을 입력하세요."
-            active={activeSearchBar}
-          />
-          <SearchBtn>
-            <SearchIcon />
-          </SearchBtn>
-        </SearchUtil>
-        <HeaderMenu>
-          <img alt="pofileImg" src={navData.profileImgUrl} />
-        </HeaderMenu>
-      </HeaderUtil>
-    </HeaderInner>
+    navData && (
+      <HeaderInner onMouseLeave={mouseLeaveHeader}>
+        <BlogTitle>{navData.blogTitle}</BlogTitle>
+        <HeaderUtil>
+          <SearchUtil active={activeSearchBar} onClick={clickSearch}>
+            <SearchInput
+              type="text"
+              placeholder="검색내용을 입력하세요."
+              active={activeSearchBar}
+            />
+            <SearchBtn>
+              <SearchIcon />
+            </SearchBtn>
+          </SearchUtil>
+          <HeaderMenu>
+            <img alt="pofileImg" src={navData.profileImgUrl} />
+          </HeaderMenu>
+        </HeaderUtil>
+      </HeaderInner>
+    )
   );
 }
 

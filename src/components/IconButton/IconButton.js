@@ -3,8 +3,7 @@ import { Github } from '@styled-icons/boxicons-logos/Github';
 import { Instagram } from '@styled-icons/boxicons-logos/Instagram';
 import { Link } from '@styled-icons/entypo/Link';
 
-export function GithubIconButton() {
-  const userGithub = 'https://github.com/ChoJinmok';
+export function GithubIconButton({ userGithub }) {
   return (
     <a href={userGithub} target="_blank" rel="noopener noreferrer">
       <IconButton>
@@ -14,8 +13,7 @@ export function GithubIconButton() {
   );
 }
 
-export function InstagramIconButton() {
-  const userIstagram = 'https://www.instagram.com/jo_jinmok/';
+export function InstagramIconButton({ userIstagram }) {
   return (
     <a href={userIstagram} target="_blank" rel="noopener noreferrer">
       <IconButton>

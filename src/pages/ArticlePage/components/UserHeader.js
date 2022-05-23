@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import {
   GithubIconButton,
@@ -5,24 +6,38 @@ import {
   LinkCopyIconButton,
 } from '../../../components/IconButton/IconButton';
 
-export default function UserHeader() {
+export default function UserHeader({ publishTime }) {
+  const [userData, setUserData] = useState(null);
+
+  useEffect(() => {
+    fetch('http://localhost:3000/blog-project-v0.0/data/userData.json')
+      .then(result => result.json())
+      .then(res => setUserData(res[0]));
+  }, []);
+
   return (
-    <ContentHeader>
-      <HeaderLeft>
-        <UserPicture>
-          <img alt="usePicture" src="/blog-project-v0.0/images/IMG_0735.JPG" />
-        </UserPicture>
-        <ArticleInfo>
-          <UserNickName>나목</UserNickName>
-          <CreatingTime>May 21, 2022</CreatingTime>
-        </ArticleInfo>
-      </HeaderLeft>
-      <HeaderRight>
-        <GithubIconButton />
-        <InstagramIconButton />
-        <LinkCopyIconButton />
-      </HeaderRight>
-    </ContentHeader>
+    userData && (
+      <ContentHeader>
+        <HeaderLeft>
+          <UserPicture>
+            <img alt="usePicture" src={userData.profileImgUrl} />
+          </UserPicture>
+          <ArticleInfo>
+            <UserNickName>{userData.userName}</UserNickName>
+            <CreatingTime>{publishTime}</CreatingTime>
+          </ArticleInfo>
+        </HeaderLeft>
+        <HeaderRight>
+          {userData.userGithub && (
+            <GithubIconButton userGithub={userData.userGithub} />
+          )}
+          {userData.userIstagram && (
+            <InstagramIconButton userIstagram={userData.userIstagram} />
+          )}
+          <LinkCopyIconButton />
+        </HeaderRight>
+      </ContentHeader>
+    )
   );
 }
 
