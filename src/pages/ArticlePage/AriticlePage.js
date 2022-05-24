@@ -10,7 +10,7 @@ export default function ArticlePage() {
   const params = useParams();
 
   useEffect(() => {
-    fetch('http://localhost:3000/blog-project-v0.0/data/articleData.json')
+    fetch('/blog-project-v0.0/data/articleData.json')
       .then(result => result.json())
       .then(res =>
         setArticleData(res.filter(el => el.id === parseInt(params.id))[0])
