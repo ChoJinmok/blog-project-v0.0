@@ -10,7 +10,7 @@ export default function UserHeader({ publishTime }) {
   const [userData, setUserData] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:3000/blog-project-v0.0/data/userData.json')
+    fetch('/blog-project-v0.0/data/userData.json')
       .then(result => result.json())
       .then(res => setUserData(res[0]));
   }, []);

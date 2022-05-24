@@ -12,7 +12,7 @@ export default function MyBlog() {
   const [articleData, setArticleData] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/blog-project-v0.0/data/articleData.json')
+    fetch('/blog-project-v0.0/data/articleData.json')
       .then(result => result.json())
       .then(res => setArticleData(res));
   }, []);
