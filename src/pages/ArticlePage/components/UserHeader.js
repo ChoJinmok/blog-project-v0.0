@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import {
   GithubIconButton,
@@ -19,11 +20,15 @@ export default function UserHeader({ publishTime }) {
     userData && (
       <ContentHeader>
         <HeaderLeft>
-          <UserPicture>
-            <img alt="usePicture" src={userData.profileImgUrl} />
-          </UserPicture>
+          <Link to="/blog-project-v0.0/">
+            <UserPicture>
+              <img alt="usePicture" src={userData.profileImgUrl} />
+            </UserPicture>
+          </Link>
           <ArticleInfo>
-            <UserNickName>{userData.userName}</UserNickName>
+            <Link to="/blog-project-v0.0/">
+              <UserNickName>{userData.userName}</UserNickName>
+            </Link>
             <CreatingTime>{publishTime}</CreatingTime>
           </ArticleInfo>
         </HeaderLeft>
@@ -71,6 +76,10 @@ const UserPicture = styled.div`
 const ArticleInfo = styled.div`
   display: flex;
   flex-direction: column;
+
+  a {
+    text-decoration: none;
+  }
 `;
 
 const UserNickName = styled.span`
