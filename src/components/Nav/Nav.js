@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { Search } from '@styled-icons/bootstrap/Search';
 
@@ -23,7 +24,9 @@ export default function Nav() {
   return (
     navData && (
       <HeaderInner onMouseLeave={mouseLeaveHeader}>
-        <BlogTitle>{navData.blogTitle}</BlogTitle>
+        <Link to="/blog-project-v0.0/">
+          <BlogTitle>{navData.blogTitle}</BlogTitle>
+        </Link>
         <HeaderUtil>
           <SearchUtil active={activeSearchBar} onClick={clickSearch}>
             <SearchInput
@@ -53,6 +56,10 @@ const HeaderInner = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 1080px;
+
+  a {
+    text-decoration: none;
+  }
 `;
 
 const BlogTitle = styled.h1`
