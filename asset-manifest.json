@@ -1,10 +1,20 @@
 {
   "files": {
-    "main.js": "/blog-project-v0.0/static/js/main.37c83425.js",
+    "main.js": "/blog-project-v0.0/static/js/main.bd84c6dc.js",
+    "static/media/NotoSansKR-Black.otf": "/blog-project-v0.0/static/media/NotoSansKR-Black.dba005b6b1bed712b472.otf",
+    "static/media/NotoSansKR-Bold.otf": "/blog-project-v0.0/static/media/NotoSansKR-Bold.c252383c4f70753be0e7.otf",
+    "static/media/NotoSansKR-Medium.otf": "/blog-project-v0.0/static/media/NotoSansKR-Medium.56207b5e52841342a21b.otf",
+    "static/media/NotoSansKR-Regular.otf": "/blog-project-v0.0/static/media/NotoSansKR-Regular.e1aa54c04a18648e6468.otf",
+    "static/media/NotoSansKR-Light.otf": "/blog-project-v0.0/static/media/NotoSansKR-Light.636ff9b51e826a733c3d.otf",
+    "static/media/NotoSansKR-Thin.otf": "/blog-project-v0.0/static/media/NotoSansKR-Thin.a3e74b5ef0ed5ab193f5.otf",
+    "static/media/NotoSans-Regular.ttf": "/blog-project-v0.0/static/media/NotoSans-Regular.dd797c0b1fb3e9b287f9.ttf",
+    "static/media/NotoSans-Bold.ttf": "/blog-project-v0.0/static/media/NotoSans-Bold.d6c5c03d5fce9c8441bc.ttf",
+    "static/media/NotoSans-BoldItalic.ttf": "/blog-project-v0.0/static/media/NotoSans-BoldItalic.7f54f6dcef2d0485bc68.ttf",
+    "static/media/NotoSans-Italic.ttf": "/blog-project-v0.0/static/media/NotoSans-Italic.bce6c95c93b94e166b1b.ttf",
     "index.html": "/blog-project-v0.0/index.html",
-    "main.37c83425.js.map": "/blog-project-v0.0/static/js/main.37c83425.js.map"
+    "main.bd84c6dc.js.map": "/blog-project-v0.0/static/js/main.bd84c6dc.js.map"
   },
   "entrypoints": [
-    "static/js/main.37c83425.js"
+    "static/js/main.bd84c6dc.js"
   ]
 }
