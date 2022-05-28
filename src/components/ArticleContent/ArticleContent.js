@@ -56,7 +56,7 @@ const ContentWrap = styled.div`
   display: -webkit-box;
   padding-top: 6px;
   margin-bottom: 21px;
-  max-height: 43px;
+  max-height: 45px;
   color: #666;
   font-size: 14px;
   line-height: 21px;
