@@ -102,10 +102,11 @@ const SearchInput = styled.input`
 const SearchBtn = styled.button`
   position: absolute;
   top: 50%;
-  right: 1px;
+  right: 6.5px;
   transform: translateY(-50%);
   z-index: 10;
-  padding: none;
+  margin: 0;
+  padding: 0;
   border: none;
   background-color: transparent;
   cursor: pointer;
