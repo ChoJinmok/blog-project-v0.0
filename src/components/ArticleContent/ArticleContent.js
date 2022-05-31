@@ -11,20 +11,24 @@ export default function ArticleContent({ articleData }) {
   };
 
   return (
-    <ArticleWrap onClick={goToArticlePage}>
-      <PublishTime>{articleData.publishTime}</PublishTime>
-      <ArticleTitle>{articleData.title}</ArticleTitle>
-      <ContentWrap>
-        <SubTitle>{articleData.subTitile}</SubTitle>
-        <Content>{articleData.content}</Content>
-      </ContentWrap>
+    <ArticleWrap>
+      <ArticleContentTop onClick={goToArticlePage}>
+        <PublishTime>{articleData.publishTime}</PublishTime>
+        <ArticleTitle>{articleData.title}</ArticleTitle>
+        <ContentWrap>
+          <SubTitle>{articleData.subTitile}</SubTitle>
+          <Content>{articleData.content}</Content>
+        </ContentWrap>
+      </ArticleContentTop>
       <ArticleContentBottom>
         <ArticleCategoryWrap>
           {articleData.tags.map((tag, index) => {
             return <ArticleCategory key={index}>{tag}</ArticleCategory>;
           })}
         </ArticleCategoryWrap>
-        <LinkCopyIconButton />
+        <LinkCopyIconButton
+          url={`${window.document.location.href}article/${articleData.id}`}
+        />
       </ArticleContentBottom>
     </ArticleWrap>
   );
@@ -35,6 +39,9 @@ const ArticleWrap = styled.li`
   padding: 24px 0 27px;
   border-bottom: 1px solid #eee;
   line-height: 1.5;
+`;
+
+const ArticleContentTop = styled.div`
   cursor: pointer;
 `;
 
