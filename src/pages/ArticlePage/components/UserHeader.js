@@ -39,7 +39,7 @@ export default function UserHeader({ publishTime }) {
           {userData.userIstagram && (
             <InstagramIconButton userIstagram={userData.userIstagram} />
           )}
-          <LinkCopyIconButton />
+          <LinkCopyIconButton url={window.document.location.href} />
         </HeaderRight>
       </ContentHeader>
     )

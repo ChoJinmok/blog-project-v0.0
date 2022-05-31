@@ -23,9 +23,15 @@ export function InstagramIconButton({ userIstagram }) {
   );
 }
 
-export function LinkCopyIconButton() {
+export function LinkCopyIconButton({ url }) {
+  const copyLink = url => {
+    navigator.clipboard.writeText(url).then(() => {
+      alert('링크를 복사했습니다.');
+    });
+  };
+
   return (
-    <IconButton>
+    <IconButton onClick={() => copyLink(url)}>
       <LinkCopyIcon />
     </IconButton>
   );
