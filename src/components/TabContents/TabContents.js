@@ -33,4 +33,10 @@ const Tab = styled.span`
   font-size: 14px;
   line-height: 20px;
   cursor: pointer;
+
+  &:hover {
+    color: ${props => (props.isActive ? '#333' : 'rgba(117, 117, 117, 1)')};
+    border-color: ${props =>
+      props.isActive ? '#333' : 'rgba(117, 117, 117, 1)'};
+  }
 `;
