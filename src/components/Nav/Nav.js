@@ -4,8 +4,9 @@ import styled from 'styled-components';
 import { Search } from '@styled-icons/bootstrap/Search';
 
 export default function Nav() {
-  const [activeSearchBar, setActiveSearchBar] = useState(false);
   const [navData, setNavData] = useState(null);
+  const [activeSearchBar, setActiveSearchBar] = useState(false);
+  const [searchValue, setSearchValue] = useState('');
 
   useEffect(() => {
     fetch('/blog-project-v0.0/data/userData.json')
@@ -19,6 +20,11 @@ export default function Nav() {
 
   const mouseLeaveHeader = () => {
     setActiveSearchBar(false);
+    setSearchValue('');
+  };
+
+  const handleSearchInput = event => {
+    setSearchValue(event.target.value);
   };
 
   return (
@@ -32,7 +38,9 @@ export default function Nav() {
             <SearchInput
               type="text"
               placeholder="검색내용을 입력하세요."
-              active={activeSearchBar}
+              // active={activeSearchBar}
+              value={searchValue}
+              onChange={handleSearchInput}
             />
             <SearchBtn>
               <SearchIcon />
