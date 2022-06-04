@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/blog-project-v0.0/static/js/main.fd396d0d.js",
+    "main.js": "/blog-project-v0.0/static/js/main.df904f11.js",
     "static/media/noto-sans-kr-v27-latin_korean-900.woff": "/blog-project-v0.0/static/media/noto-sans-kr-v27-latin_korean-900.f1f8721ba20a810b5183.woff",
     "static/media/noto-sans-kr-v27-latin_korean-700.woff": "/blog-project-v0.0/static/media/noto-sans-kr-v27-latin_korean-700.8596b7f7d8fc0396fe8a.woff",
     "static/media/noto-sans-kr-v27-latin_korean-500.woff": "/blog-project-v0.0/static/media/noto-sans-kr-v27-latin_korean-500.bca301e61093bfe5224a.woff",
@@ -14,9 +14,9 @@
     "static/media/noto-sans-kr-v27-latin_korean-300.woff2": "/blog-project-v0.0/static/media/noto-sans-kr-v27-latin_korean-300.362210c3832c54095487.woff2",
     "static/media/noto-sans-kr-v27-latin_korean-100.woff2": "/blog-project-v0.0/static/media/noto-sans-kr-v27-latin_korean-100.b5277f6306eec398b60c.woff2",
     "index.html": "/blog-project-v0.0/index.html",
-    "main.fd396d0d.js.map": "/blog-project-v0.0/static/js/main.fd396d0d.js.map"
+    "main.df904f11.js.map": "/blog-project-v0.0/static/js/main.df904f11.js.map"
   },
   "entrypoints": [
-    "static/js/main.fd396d0d.js"
+    "static/js/main.df904f11.js"
   ]
 }
