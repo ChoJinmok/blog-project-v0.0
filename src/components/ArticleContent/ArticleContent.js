@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { LinkCopyIconButton } from '../../components/IconButton/IconButton';
+import { animationUp } from '../../styles/commonStyle';
 
 export default function ArticleContent({ articleData }) {
   const navigate = useNavigate();
@@ -39,6 +40,7 @@ const ArticleWrap = styled.li`
   padding: 24px 0 27px;
   border-bottom: 1px solid #eee;
   line-height: 1.5;
+  animation: ${animationUp} 0.2s;
 `;
 
 const ArticleContentTop = styled.div`
