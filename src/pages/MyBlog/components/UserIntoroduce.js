@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { animationUp } from '../../../styles/commonStyle';
+
 export default function UserIntroduce() {
   return (
     <UserIntroduceWrap>
@@ -42,6 +44,7 @@ const UserIntroduceWrap = styled.div`
   font-size: 14px;
   line-height: 1.5;
   color: #333;
+  animation: ${animationUp} 0.2s;
 `;
 
 const IntroduceDefault = styled.div`
