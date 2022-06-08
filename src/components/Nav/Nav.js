@@ -63,7 +63,8 @@ const HeaderInner = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 1080px;
+  width: 100%;
+  padding: 30px 30px 0;
 
   a {
     text-decoration: none;
@@ -71,9 +72,9 @@ const HeaderInner = styled.div`
 `;
 
 const BlogTitle = styled.h1`
-  padding: 23px 0;
-  font-weight: 800;
-  font-size: 1.75em;
+  /* padding: 23px 0; */
+  font-weight: normal;
+  font-size: 1.6em;
   line-height: 32px;
   letter-spacing: -0.2px;
   color: #333;
