@@ -32,6 +32,7 @@ export default function Nav() {
       <HeaderInner onMouseLeave={mouseLeaveHeader}>
         <Link to="/blog-project-v0.0/">
           <BlogTitle>{navData.blogTitle}</BlogTitle>
+          {/* <BlogTitle>brench</BlogTitle> */}
         </Link>
         <HeaderUtil>
           <SearchUtil active={activeSearchBar} onClick={clickSearch}>
@@ -73,9 +74,11 @@ const HeaderInner = styled.div`
 
 const BlogTitle = styled.h1`
   /* padding: 23px 0; */
+  border-bottom: 0.5px solid #333;
+  font-family: 'Nanum Brush Script';
   font-weight: normal;
-  font-size: 1.6em;
-  line-height: 32px;
+  font-size: 1.375em;
+  /* line-height: 32px; */
   letter-spacing: -0.2px;
   color: #333;
 `;
