@@ -32,6 +32,7 @@ export default function Nav() {
       <HeaderInner onMouseLeave={mouseLeaveHeader}>
         <Link to="/blog-project-v0.0/">
           <BlogTitle>{navData.blogTitle}</BlogTitle>
+          {/* <BlogTitle>brench</BlogTitle> */}
         </Link>
         <HeaderUtil>
           <SearchUtil active={activeSearchBar} onClick={clickSearch}>
@@ -63,7 +64,8 @@ const HeaderInner = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 1080px;
+  width: 100%;
+  padding: 30px 30px 0;
 
   a {
     text-decoration: none;
@@ -71,10 +73,12 @@ const HeaderInner = styled.div`
 `;
 
 const BlogTitle = styled.h1`
-  padding: 23px 0;
-  font-weight: 800;
-  font-size: 1.75em;
-  line-height: 32px;
+  /* padding: 23px 0; */
+  border-bottom: 0.5px solid #333;
+  font-family: 'Nanum Brush Script';
+  font-weight: normal;
+  font-size: 1.375em;
+  /* line-height: 32px; */
   letter-spacing: -0.2px;
   color: #333;
 `;

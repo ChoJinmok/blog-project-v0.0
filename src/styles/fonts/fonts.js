@@ -13,6 +13,9 @@ import NotoSansKr700Woff2 from './noto-sans-kr-v27-latin_korean-700.woff2';
 import NotoSansKr900Woff from './noto-sans-kr-v27-latin_korean-900.woff';
 import NotoSansKr900Woff2 from './noto-sans-kr-v27-latin_korean-900.woff2';
 
+import NanumBrushWoff from './nanum-brush-script-v22-latin_korean-regular.woff';
+import NanumBrushWoff2 from './nanum-brush-script-v22-latin_korean-regular.woff2';
+
 export default createGlobalStyle`
     /* noto-sans-kr-100 - latin_korean */
     @font-face {
@@ -91,5 +94,16 @@ export default createGlobalStyle`
         url(${NotoSansKr900Woff}) format('woff'), /* Modern Browsers */
         url('noto-sans-kr-v27-latin_korean-900.ttf') format('truetype'), /* Safari, Android, iOS */
         url('noto-sans-kr-v27-latin_korean-900.svg#NotoSansKR') format('svg'); /* Legacy iOS */
+    }
+
+    /* nanum-brush-script-regular - latin_korean */
+    /* nanum-brush-script-regular - latin_korean */
+    @font-face {
+    font-family: 'Nanum Brush Script';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Nanum Brush Script'),
+        url(${NanumBrushWoff2}) format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url(${NanumBrushWoff}) format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
     }
 `;
