@@ -1,12 +1,15 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+
 import styled from 'styled-components';
 import { Search } from '@styled-icons/bootstrap/Search';
+import { ThreeDots } from '@styled-icons/bootstrap/ThreeDots';
 
 export default function Nav() {
   const [navData, setNavData] = useState(null);
   const [activeSearchBar, setActiveSearchBar] = useState(false);
   const [searchValue, setSearchValue] = useState('');
+  const [titleTogle, setTitleTogle] = useState(false);
 
   useEffect(() => {
     fetch('/blog-project-v0.0/data/userData.json')
@@ -23,6 +26,10 @@ export default function Nav() {
     setSearchValue('');
   };
 
+  const clickTilte = () => {
+    setTitleTogle(!titleTogle);
+  };
+
   const handleSearchInput = event => {
     setSearchValue(event.target.value);
   };
@@ -30,10 +37,17 @@ export default function Nav() {
   return (
     navData && (
       <HeaderInner onMouseLeave={mouseLeaveHeader}>
-        <Link to="/blog-project-v0.0/">
-          <BlogTitle>{navData.blogTitle}</BlogTitle>
-          {/* <BlogTitle>brench</BlogTitle> */}
-        </Link>
+        <LogoContainer>
+          <ChangeLogoBtn>
+            <ChatLeftDotsIcon />
+          </ChangeLogoBtn>
+          {/* <Link to="/blog-project-v0.0/">
+            <BlogTitle>minglePinnacle</BlogTitle>
+          </Link> */}
+          <Link to="/blog-project-v0.0/">
+            <BlogTitle onClick={clickTilte}>{navData.blogTitle}</BlogTitle>
+          </Link>
+        </LogoContainer>
         <HeaderUtil>
           <SearchUtil active={activeSearchBar} onClick={clickSearch}>
             <SearchInput
@@ -72,12 +86,28 @@ const HeaderInner = styled.div`
   }
 `;
 
+const LogoContainer = styled.div`
+  display: flex;
+`;
+
+const ChangeLogoBtn = styled.button`
+  all: unset;
+  margin-right: 11px;
+  cursor: pointer;
+`;
+
+const ChatLeftDotsIcon = styled(ThreeDots)`
+  width: 20px;
+  color: #333;
+`;
+
 const BlogTitle = styled.h1`
   /* padding: 23px 0; */
-  border-bottom: 0.5px solid #333;
+  /* border-bottom: 0.5px solid #333; */
   font-family: 'Nanum Brush Script';
-  font-weight: normal;
+  font-weight: 300;
   font-size: 1.375em;
+  font-style: italic;
   /* line-height: 32px; */
   letter-spacing: -0.2px;
   color: #333;
