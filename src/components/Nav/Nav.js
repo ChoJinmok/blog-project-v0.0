@@ -38,15 +38,15 @@ export default function Nav() {
     navData && (
       <HeaderInner onMouseLeave={mouseLeaveHeader}>
         <LogoContainer>
-          <ChangeLogoBtn>
-            <ChatLeftDotsIcon />
+          <ChangeLogoBtn onClick={clickTilte}>
+            <ChatLeftDotsIcon titleTogle={titleTogle} />
           </ChangeLogoBtn>
-          {/* <Link to="/blog-project-v0.0/">
+          <BlogLogoLink to="/blog-project-v0.0/" titleTogle={titleTogle}>
             <BlogTitle>minglePinnacle</BlogTitle>
-          </Link> */}
-          <Link to="/blog-project-v0.0/">
+          </BlogLogoLink>
+          <BlogTitleWrapLink to="/blog-project-v0.0/" titleTogle={titleTogle}>
             <BlogTitle onClick={clickTilte}>{navData.blogTitle}</BlogTitle>
-          </Link>
+          </BlogTitleWrapLink>
         </LogoContainer>
         <HeaderUtil>
           <SearchUtil active={activeSearchBar} onClick={clickSearch}>
@@ -99,6 +99,28 @@ const ChangeLogoBtn = styled.button`
 const ChatLeftDotsIcon = styled(ThreeDots)`
   width: 20px;
   color: #333;
+  ${props => (props.titleTogle ? null : 'transform: rotate(-90deg)')};
+  transition: transform 0.2s;
+`;
+
+const BlogLogoTitleLink = styled(Link)`
+  position: absolute;
+  left: 63px;
+  transition: transform 0.3s, opacity 0.2s;
+`;
+
+const BlogLogoLink = styled(BlogLogoTitleLink)`
+  visibility: ${props => (props.titleTogle ? 'visible' : 'hidden')};
+  ${props => (props.titleTogle ? null : 'opacity: 0.1')};
+  transform: ${props =>
+    props.titleTogle ? 'translate(0)' : 'translateY(-50px)'};
+`;
+
+const BlogTitleWrapLink = styled(BlogLogoTitleLink)`
+  visibility: ${props => (props.titleTogle ? 'hidden' : 'visible')};
+  ${props => (props.titleTogle ? 'opacity: 0.1' : null)};
+  transform: ${props =>
+    props.titleTogle ? 'translateY(50px)' : 'translate(0)'};
 `;
 
 const BlogTitle = styled.h1`
