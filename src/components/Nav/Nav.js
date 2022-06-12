@@ -1,12 +1,15 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+
 import styled from 'styled-components';
 import { Search } from '@styled-icons/bootstrap/Search';
+import { ThreeDots } from '@styled-icons/bootstrap/ThreeDots';
 
 export default function Nav() {
   const [navData, setNavData] = useState(null);
   const [activeSearchBar, setActiveSearchBar] = useState(false);
   const [searchValue, setSearchValue] = useState('');
+  const [titleTogle, setTitleTogle] = useState(false);
 
   useEffect(() => {
     fetch('/blog-project-v0.0/data/userData.json')
@@ -23,6 +26,10 @@ export default function Nav() {
     setSearchValue('');
   };
 
+  const clickTilte = () => {
+    setTitleTogle(!titleTogle);
+  };
+
   const handleSearchInput = event => {
     setSearchValue(event.target.value);
   };
@@ -30,10 +37,17 @@ export default function Nav() {
   return (
     navData && (
       <HeaderInner onMouseLeave={mouseLeaveHeader}>
-        <Link to="/blog-project-v0.0/">
-          <BlogTitle>{navData.blogTitle}</BlogTitle>
-          {/* <BlogTitle>brench</BlogTitle> */}
-        </Link>
+        <LogoContainer>
+          <ChangeLogoBtn onClick={clickTilte}>
+            <ChatLeftDotsIcon titleTogle={titleTogle} />
+          </ChangeLogoBtn>
+          <BlogLogoLink to="/blog-project-v0.0/" titleTogle={titleTogle}>
+            <BlogTitle>minglePinnacle</BlogTitle>
+          </BlogLogoLink>
+          <BlogTitleWrapLink to="/blog-project-v0.0/" titleTogle={titleTogle}>
+            <BlogTitle onClick={clickTilte}>{navData.blogTitle}</BlogTitle>
+          </BlogTitleWrapLink>
+        </LogoContainer>
         <HeaderUtil>
           <SearchUtil active={activeSearchBar} onClick={clickSearch}>
             <SearchInput
@@ -72,12 +86,50 @@ const HeaderInner = styled.div`
   }
 `;
 
+const LogoContainer = styled.div`
+  display: flex;
+`;
+
+const ChangeLogoBtn = styled.button`
+  all: unset;
+  margin-right: 11px;
+  cursor: pointer;
+`;
+
+const ChatLeftDotsIcon = styled(ThreeDots)`
+  width: 20px;
+  color: #333;
+  ${props => (props.titleTogle ? null : 'transform: rotate(-90deg)')};
+  transition: transform 0.2s;
+`;
+
+const BlogLogoTitleLink = styled(Link)`
+  position: absolute;
+  left: 63px;
+  transition: transform 0.3s, opacity 0.2s;
+`;
+
+const BlogLogoLink = styled(BlogLogoTitleLink)`
+  visibility: ${props => (props.titleTogle ? 'visible' : 'hidden')};
+  ${props => (props.titleTogle ? null : 'opacity: 0.1')};
+  transform: ${props =>
+    props.titleTogle ? 'translate(0)' : 'translateY(-50px)'};
+`;
+
+const BlogTitleWrapLink = styled(BlogLogoTitleLink)`
+  visibility: ${props => (props.titleTogle ? 'hidden' : 'visible')};
+  ${props => (props.titleTogle ? 'opacity: 0.1' : null)};
+  transform: ${props =>
+    props.titleTogle ? 'translateY(50px)' : 'translate(0)'};
+`;
+
 const BlogTitle = styled.h1`
   /* padding: 23px 0; */
-  border-bottom: 0.5px solid #333;
+  /* border-bottom: 0.5px solid #333; */
   font-family: 'Nanum Brush Script';
-  font-weight: normal;
+  font-weight: 300;
   font-size: 1.375em;
+  font-style: italic;
   /* line-height: 32px; */
   letter-spacing: -0.2px;
   color: #333;
