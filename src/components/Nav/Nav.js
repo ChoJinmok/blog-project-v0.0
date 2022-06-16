@@ -41,12 +41,19 @@ export default function Nav() {
           <ChangeLogoBtn onClick={clickTilte}>
             <ChatLeftDotsIcon titleTogle={titleTogle} />
           </ChangeLogoBtn>
-          <BlogLogoLink to="/blog-project-v0.0/" titleTogle={titleTogle}>
-            <BlogTitle>minglePinnacle</BlogTitle>
-          </BlogLogoLink>
-          <BlogTitleWrapLink to="/blog-project-v0.0/" titleTogle={titleTogle}>
-            <BlogTitle onClick={clickTilte}>{navData.blogTitle}</BlogTitle>
-          </BlogTitleWrapLink>
+          <BlogLogoTitleWrap>
+            <BlogLogoTitle titleTogle={titleTogle}>
+              <BlogLogoLink to="/blog-project-v0.0/" titleTogle={titleTogle}>
+                <BlogTitle>minglePinnacle</BlogTitle>
+              </BlogLogoLink>
+              <BlogTitleWrapLink
+                to="/blog-project-v0.0/"
+                titleTogle={titleTogle}
+              >
+                <BlogTitle onClick={clickTilte}>{navData.blogTitle}</BlogTitle>
+              </BlogTitleWrapLink>
+            </BlogLogoTitle>
+          </BlogLogoTitleWrap>
         </LogoContainer>
         <HeaderUtil>
           <SearchUtil active={activeSearchBar} onClick={clickSearch}>
@@ -103,24 +110,42 @@ const ChatLeftDotsIcon = styled(ThreeDots)`
   transition: transform 0.2s;
 `;
 
-const BlogLogoTitleLink = styled(Link)`
+const BlogLogoTitleWrap = styled.div`
   position: absolute;
+  top: 50%;
   left: 63px;
-  transition: transform 0.3s, opacity 0.2s;
+  /* transform: translateY(-50%); */
+  height: 50px;
+  /* width: 400px; */
+  overflow: hidden;
+`;
+
+const BlogLogoTitle = styled.div`
+  /* position: absolute; */
+  transform: ${props =>
+    props.titleTogle ? 'translate(0)' : 'translateY(-50px)'};
+  transition: transform 0.3s;
+`;
+
+const BlogLogoTitleLink = styled(Link)`
+  display: block;
+  padding: 4px 0 24px;
+  /* position: absolute; */
+  /* left: 63px; */
+  transition: opacity 0.1s;
 `;
 
 const BlogLogoLink = styled(BlogLogoTitleLink)`
-  visibility: ${props => (props.titleTogle ? 'visible' : 'hidden')};
-  ${props => (props.titleTogle ? null : 'opacity: 0.1')};
-  transform: ${props =>
-    props.titleTogle ? 'translate(0)' : 'translateY(-50px)'};
+  /* visibility: ${props => (props.titleTogle ? 'visible' : 'hidden')}; */
+  ${props => (props.titleTogle ? null : 'opacity: 0.1')}/* transform: ${props =>
+    props.titleTogle ? 'translate(0)' : 'translateY(-50px)'}; */
 `;
 
 const BlogTitleWrapLink = styled(BlogLogoTitleLink)`
-  visibility: ${props => (props.titleTogle ? 'hidden' : 'visible')};
-  ${props => (props.titleTogle ? 'opacity: 0.1' : null)};
-  transform: ${props =>
-    props.titleTogle ? 'translateY(50px)' : 'translate(0)'};
+  /* visibility: ${props => (props.titleTogle ? 'hidden' : 'visible')}; */
+  ${props =>
+    props.titleTogle ? 'opacity: 0.1;' : null}/* transform: ${props =>
+    props.titleTogle ? 'translateY(50px)' : 'translate(0)'}; */
 `;
 
 const BlogTitle = styled.h1`
