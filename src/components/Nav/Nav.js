@@ -111,7 +111,11 @@ const ChatLeftDotsIcon = styled(ThreeDots)`
 `;
 
 const BlogLogoTitleWrap = styled.div`
-  height: 30px;
+  position: absolute;
+  top: 50%;
+  left: 63px;
+  /* transform: translateY(-50%); */
+  height: 50px;
   /* width: 400px; */
   overflow: hidden;
 `;
@@ -119,13 +123,13 @@ const BlogLogoTitleWrap = styled.div`
 const BlogLogoTitle = styled.div`
   /* position: absolute; */
   transform: ${props =>
-    props.titleTogle ? 'translate(0)' : 'translateY(-30px)'};
-  transition: transform 0.4s;
+    props.titleTogle ? 'translate(0)' : 'translateY(-50px)'};
+  transition: transform 0.3s;
 `;
 
 const BlogLogoTitleLink = styled(Link)`
   display: block;
-  padding: 4px 0;
+  padding: 4px 0 24px;
   /* position: absolute; */
   /* left: 63px; */
   transition: opacity 0.1s;
