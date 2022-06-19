@@ -95,6 +95,7 @@ const HeaderInner = styled.div`
 
 const LogoContainer = styled.div`
   display: flex;
+  position: relative;
 `;
 
 const ChangeLogoBtn = styled.button`
@@ -113,10 +114,10 @@ const ChatLeftDotsIcon = styled(ThreeDots)`
 const BlogLogoTitleWrap = styled.div`
   position: absolute;
   top: 50%;
-  left: 63px;
-  /* transform: translateY(-50%); */
-  height: 50px;
-  /* width: 400px; */
+  left: 40px;
+  transform: translateY(-50%);
+  height: 80px;
+  width: max-content;
   overflow: hidden;
 `;
 
@@ -129,10 +130,11 @@ const BlogLogoTitle = styled.div`
 
 const BlogLogoTitleLink = styled(Link)`
   display: block;
-  padding: 4px 0 24px;
+  /* padding: 26px 0 2px; */
+  padding-top: 29px;
   /* position: absolute; */
   /* left: 63px; */
-  transition: opacity 0.1s;
+  transition: opacity 0.2s;
 `;
 
 const BlogLogoLink = styled(BlogLogoTitleLink)`
