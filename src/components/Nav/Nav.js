@@ -50,7 +50,7 @@ export default function Nav() {
                 to="/blog-project-v0.0/"
                 titleTogle={titleTogle}
               >
-                <BlogTitle onClick={clickTilte}>{navData.blogTitle}</BlogTitle>
+                <BlogTitle>{navData.blogTitle}</BlogTitle>
               </BlogTitleWrapLink>
             </BlogLogoTitle>
           </BlogLogoTitleWrap>
