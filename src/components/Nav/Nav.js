@@ -50,7 +50,7 @@ export default function Nav() {
                 to="/blog-project-v0.0/"
                 titleTogle={titleTogle}
               >
-                <BlogTitle onClick={clickTilte}>{navData.blogTitle}</BlogTitle>
+                <BlogTitle>{navData.blogTitle}</BlogTitle>
               </BlogTitleWrapLink>
             </BlogLogoTitle>
           </BlogLogoTitleWrap>
@@ -124,7 +124,7 @@ const BlogLogoTitleWrap = styled.div`
 const BlogLogoTitle = styled.div`
   /* position: absolute; */
   transform: ${props =>
-    props.titleTogle ? 'translate(0)' : 'translateY(-50px)'};
+    props.titleTogle ? 'translate(0)' : 'translateY(-51px)'};
   transition: transform 0.3s;
 `;
 
