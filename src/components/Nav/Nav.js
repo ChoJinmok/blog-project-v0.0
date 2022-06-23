@@ -124,7 +124,7 @@ const BlogLogoTitleWrap = styled.div`
 const BlogLogoTitle = styled.div`
   /* position: absolute; */
   transform: ${props =>
-    props.titleTogle ? 'translate(0)' : 'translateY(-50px)'};
+    props.titleTogle ? 'translate(0)' : 'translateY(-51px)'};
   transition: transform 0.3s;
 `;
 
