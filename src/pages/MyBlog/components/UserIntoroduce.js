@@ -3,8 +3,22 @@ import styled from 'styled-components';
 import { animationUp } from '../../../styles/commonStyle';
 
 export default function UserIntroduce() {
+  const USER_INTRODUCE_DATA = [
+    {
+      id: 1,
+      type: 'Default',
+      context: (
+        <IntroduceDefault>
+          사회를 발전시킬 수 있는 아이디어를 가진 사람들과 함께 꿈을 실현시키고
+          싶은 프론트엔드 개발자 조진목입니다.
+        </IntroduceDefault>
+      ),
+    },
+  ];
+
   return (
     <UserIntroduceWrap>
+      {USER_INTRODUCE_DATA[0].context}
       <IntroduceDefault>
         사회를 발전시킬 수 있는 아이디어를 가진{' '}
         <IntroduceBold>
