@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
+import SideMenu from './components/SideMenu';
+
 import styled from 'styled-components';
 import { Search } from '@styled-icons/bootstrap/Search';
 import { ThreeDots } from '@styled-icons/bootstrap/ThreeDots';
@@ -36,43 +38,46 @@ export default function Nav() {
 
   return (
     navData && (
-      <HeaderInner onMouseLeave={mouseLeaveHeader}>
-        <LogoContainer>
-          <ChangeLogoBtn onClick={clickTilte}>
-            <ChatLeftDotsIcon titleTogle={titleTogle} />
-          </ChangeLogoBtn>
-          <BlogLogoTitleWrap>
-            <BlogLogoTitle titleTogle={titleTogle}>
-              <BlogLogoLink to="/blog-project-v0.0/" titleTogle={titleTogle}>
-                <BlogTitle>minglePinnacle</BlogTitle>
-              </BlogLogoLink>
-              <BlogTitleWrapLink
-                to="/blog-project-v0.0/"
-                titleTogle={titleTogle}
-              >
-                <BlogTitle>{navData.blogTitle}</BlogTitle>
-              </BlogTitleWrapLink>
-            </BlogLogoTitle>
-          </BlogLogoTitleWrap>
-        </LogoContainer>
-        <HeaderUtil>
-          <SearchUtil active={activeSearchBar} onClick={clickSearch}>
-            <SearchInput
-              type="text"
-              placeholder="검색내용을 입력하세요."
-              // active={activeSearchBar}
-              value={searchValue}
-              onChange={handleSearchInput}
-            />
-            <SearchBtn>
-              <SearchIcon />
-            </SearchBtn>
-          </SearchUtil>
-          <HeaderMenu>
-            <img alt="pofileImg" src={navData.profileImgUrl} />
-          </HeaderMenu>
-        </HeaderUtil>
-      </HeaderInner>
+      <>
+        <HeaderInner onMouseLeave={mouseLeaveHeader}>
+          <LogoContainer>
+            <ChangeLogoBtn onClick={clickTilte}>
+              <ChatLeftDotsIcon titleTogle={titleTogle} />
+            </ChangeLogoBtn>
+            <BlogLogoTitleWrap>
+              <BlogLogoTitle titleTogle={titleTogle}>
+                <BlogLogoLink to="/blog-project-v0.0/" titleTogle={titleTogle}>
+                  <BlogTitle>minglePinnacle</BlogTitle>
+                </BlogLogoLink>
+                <BlogTitleWrapLink
+                  to="/blog-project-v0.0/"
+                  titleTogle={titleTogle}
+                >
+                  <BlogTitle>{navData.blogTitle}</BlogTitle>
+                </BlogTitleWrapLink>
+              </BlogLogoTitle>
+            </BlogLogoTitleWrap>
+          </LogoContainer>
+          <HeaderUtil>
+            <SearchUtil active={activeSearchBar} onClick={clickSearch}>
+              <SearchInput
+                type="text"
+                placeholder="검색내용을 입력하세요."
+                // active={activeSearchBar}
+                value={searchValue}
+                onChange={handleSearchInput}
+              />
+              <SearchBtn>
+                <SearchIcon />
+              </SearchBtn>
+            </SearchUtil>
+            <HeaderMenu>
+              <img alt="pofileImg" src={navData.profileImgUrl} />
+            </HeaderMenu>
+          </HeaderUtil>
+        </HeaderInner>
+        <SideMenu />
+      </>
     )
   );
 }
@@ -86,7 +91,7 @@ const HeaderInner = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 30px 30px 0;
+  padding: 30px 30px;
 
   a {
     text-decoration: none;
